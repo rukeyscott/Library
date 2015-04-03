@@ -18,10 +18,13 @@ public class Check {
     int bookid;
     Date duedate;
 
-    public Check(int cardholder, int bookid, Date duedate) {
+    public Check(int cardholder, int bookid,int days, Date duedate) {
         this.cardholder = cardholder;
         this.bookid = bookid;
         this.duedate = duedate;
+    }
+    public Check (String s){
+        
     }
 
     @Override
@@ -29,6 +32,11 @@ public class Check {
         return "Check{" + "cardholder=" + cardholder + ", bookid=" + bookid + 
                 ", duedate=" + duedate.toString() + '}';
     }
-    
+    public boolean ischeckedout(int item){
+        return item==bookid;
+    }
+    public int getpatroncard (){
+        return cardholder;
+    }
     
 }

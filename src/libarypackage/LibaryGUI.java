@@ -1,5 +1,9 @@
 package libarypackage;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -198,8 +202,20 @@ public class LibaryGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void openActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openActionPerformed
-        // TODO add your handling code here:
+    private void openActionPerformed(java.awt.event.ActionEvent evt) {
+         try {
+            javax.swing.JFileChooser open
+                    = new javax.swing.JFileChooser();
+            if (open.showOpenDialog(this)
+                    == javax.swing.JFileChooser.APPROVE_OPTION) {
+                java.io.File file = open.getSelectedFile();
+                owner.open(file);
+            }
+         } catch (IOException ex) {
+            Logger.getLogger("global").
+                    log(Level.SEVERE, null, ex);
+        }
+            
     }//GEN-LAST:event_openActionPerformed
 
     /**

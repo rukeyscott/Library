@@ -22,10 +22,9 @@ public class Patron {
     String state;
     String zip;
 
-    public Patron(String name, String type, int card, int numberCheckedOut, String phone, String addressl1, String addressl2, String city, String state, String zip) {
+    public Patron(String name, String type, int numberCheckedOut, String phone, String addressl1, String addressl2, String city, String state, String zip) {
         this.name = name;
         this.type = type;
-        this.card = card;
         this.numberCheckedOut = numberCheckedOut;
         this.phone = phone;
         this.addressl1 = addressl1;
@@ -34,7 +33,9 @@ public class Patron {
         this.state = state;
         this.zip = zip;
     }
-
+    public void addcard(int c){
+        card=c;
+    }
     @Override
     public String toString() {
         return "Patron{" + "name=" + name + ", type=" + type + ", card=" + card +
@@ -67,7 +68,7 @@ public class Patron {
             return 3;
         }else return 6;
     }
-
-   
-    
+    public boolean ispatron (int c){
+        return c==card;
+    }
 }

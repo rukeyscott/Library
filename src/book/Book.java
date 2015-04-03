@@ -25,7 +25,9 @@ public class Book {
         this.type = type;
         this.in = in;
     }
-
+   public void addid (int i){
+        id=i;
+}
     public Book(String book) {
         
     }
@@ -59,7 +61,9 @@ public class Book {
         return "Book{" + "title=" + title + ", athuor=" + athuor + ", description=" + 
                 description + ", type=" + type + ", in=" + in + ", id=" + id + '}';
     }
-
+    public boolean isBook(int b){
+        return b==id;
+    }
    
     
 }

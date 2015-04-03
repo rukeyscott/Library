@@ -157,8 +157,7 @@ public class PatronNew extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        Patron p= new Patron(name.getText(), (String)type.getSelectedItem(),
-                            0,0,
+        Patron p= new Patron(name.getText(), (String)type.getSelectedItem(),0,
                             phone.getText(),
                             adl1.getText(), adl2.getText(),
                             city.getText(),
