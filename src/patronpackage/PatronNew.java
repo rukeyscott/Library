@@ -79,6 +79,11 @@ public class PatronNew extends javax.swing.JInternalFrame {
         });
 
         jButton2.setText("Clear");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clear(evt);
+            }
+        });
 
         state.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Alabama ", "Alaska ", "Arizona ", "Arkansas ", "California ", "Colorado ", "Connecticut ", "Delaware ", "Florida ", "Georgia ", "Hawaii ", "Idaho ", "Illinois Indiana ", "Iowa ", "Kansas ", "Kentucky ", "Louisiana ", "Maine ", "Maryland ", "Massachusetts ", "Michigan ", "Minnesota ", "Mississippi ", "Missouri ", "Montana Nebraska ", "Nevada ", "New Hampshire ", "New Jersey ", "New Mexico ", "New York ", "North Carolina ", "North Dakota ", "Ohio ", "Oklahoma ", "Oregon ", "Pennsylvania Rhode Island ", "South Carolina ", "South Dakota ", "Tennessee ", "Texas ", "Utah ", "Vermont ", "Virginia ", "Washington ", "West Virginia ", "Wisconsin ", "Wyoming", " " }));
 
@@ -158,13 +163,21 @@ public class PatronNew extends javax.swing.JInternalFrame {
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         Patron p= new Patron(name.getText(), (String)type.getSelectedItem(),0,
-                            phone.getText(),
-                            adl1.getText(), adl2.getText(),
-                            city.getText(),
-                            (String) state.getSelectedItem(),
+                            phone.getText(), adl1.getText(), adl2.getText(),
+                            city.getText(), (String) state.getSelectedItem(),
                             zip.getText());
         owner.addPatron(p);
+        clear(evt);
     }//GEN-LAST:event_addActionPerformed
+
+    private void clear(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear
+        name.setText("");       
+        phone.setText("");
+        adl1.setText("");
+        adl2.setText("");
+        city.setText("");
+        zip.setText("");
+    }//GEN-LAST:event_clear
 
     /**
      * @param args the command line arguments

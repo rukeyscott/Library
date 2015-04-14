@@ -28,7 +28,9 @@ public class Book {
    public void addid (int i){
         id=i;
 }
+   //takes asiingle string and converts it into a book object
     public Book(String book) {
+        //mo
         
     }
 

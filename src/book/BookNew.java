@@ -71,6 +71,11 @@ public class BookNew extends javax.swing.JInternalFrame {
         });
 
         clear.setText("Clear");
+        clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clear(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -129,7 +134,14 @@ public class BookNew extends javax.swing.JInternalFrame {
                         description.getText(),
                         (String)type.getSelectedItem(),true);
         owner.addbook(b);
+        clear(evt);
     }//GEN-LAST:event_addActionPerformed
+
+    private void clear(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear
+        title.setText("");
+        author.setText("");
+        description.setText("");
+    }//GEN-LAST:event_clear
 
     /**
      * @param args the command line arguments

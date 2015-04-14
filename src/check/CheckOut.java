@@ -84,7 +84,7 @@ public class CheckOut extends javax.swing.JInternalFrame {
         clearButton.setText("Clear");
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearButtonActionPerformed(evt);
+                clear(evt);
             }
         });
 
@@ -130,11 +130,13 @@ public class CheckOut extends javax.swing.JInternalFrame {
 
     private void checkOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutButtonActionPerformed
         owner.checkout(Integer.parseInt(card.getText()), Integer.parseInt(item.getText()));
+        clear(evt);
     }//GEN-LAST:event_checkOutButtonActionPerformed
 
-    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
-        doClose(RET_CANCEL);
-    }//GEN-LAST:event_clearButtonActionPerformed
+    private void clear(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear
+       card.setText("");
+       item.setText("");
+    }//GEN-LAST:event_clear
 
     /**
      * Closes the dialog

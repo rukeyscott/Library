@@ -32,6 +32,7 @@ public class BookList extends javax.swing.JPanel {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLayeredPane2 = new javax.swing.JLayeredPane();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -40,6 +41,19 @@ public class BookList extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jLayeredPane3 = new javax.swing.JLayeredPane();
         jScrollPane1 = new javax.swing.JScrollPane();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -169,6 +183,7 @@ public class BookList extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

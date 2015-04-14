@@ -94,7 +94,7 @@ public class RemovePatron extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_okButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        
+        card.setText("");
     }//GEN-LAST:event_cancelButtonActionPerformed
 
 

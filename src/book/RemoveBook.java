@@ -51,7 +51,7 @@ public class RemoveBook extends javax.swing.JInternalFrame {
         cancelButton.setText("Clear");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelButtonActionPerformed(evt);
+                clear(evt);
             }
         });
 
@@ -93,11 +93,12 @@ public class RemoveBook extends javax.swing.JInternalFrame {
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         owner.removebook(Integer.parseInt(item.getText()));
+        clear(evt);
     }//GEN-LAST:event_okButtonActionPerformed
 
-    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-
-    }//GEN-LAST:event_cancelButtonActionPerformed
+    private void clear(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear
+            item.setText("");
+    }//GEN-LAST:event_clear
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
