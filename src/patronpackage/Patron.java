@@ -33,6 +33,19 @@ public class Patron {
         this.state = state;
         this.zip = zip;
     }
+    
+    public Patron(String person) {
+        name = person;
+        type = "";
+        numberCheckedOut = "";
+        phone = "";
+        addressl1 = "";
+        addressl2 = "";
+        city = "";
+        state = "";
+        zip = "";
+    }
+    
     public void addcard(int c){
         card=c;
     }
@@ -57,12 +70,7 @@ public class Patron {
         numberCheckedOut--;
     }
 
-    public Patron(String person) {
-        
-    }
-
- 
-   
+    
     public int items (){
         if (type=="Child"){
             return 3;
