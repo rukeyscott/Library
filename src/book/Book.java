@@ -30,7 +30,11 @@ public class Book {
 }
    //takes asiingle string and converts it into a book object
     public Book(String book) {
-        //mo
+        title = book;
+        author ="";
+        description = "";
+        type = "";
+        in = false;
         
     }
 
