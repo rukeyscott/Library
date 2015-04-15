@@ -24,7 +24,9 @@ public class Check {
         this.duedate = duedate;
     }
     public Check (String s){
-        
+        cardholder = s;
+        bookid = 0;
+        duedate;
     }
 
     @Override
