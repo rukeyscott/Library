@@ -28,7 +28,7 @@ public class Libary {
     ArrayList <Check> checkeds;
     int lastbook;
     int lastpatron;
-    Date currenrdate;
+    Date currentdate;
     File lib;
     public Libary() {
         books = new ArrayList<>();
@@ -36,6 +36,9 @@ public class Libary {
         checkeds=new ArrayList<>();
         lastbook=0;
         lastpatron=0;
+        
+        DatesTime duedate = new DateTime(currentdate.getTime());
+        
     }
     public void addbook(Book b){
         b.addid(lastbook++);
@@ -104,6 +107,18 @@ public class Libary {
         }
         return false;
         
+    }
+    
+    public boolean overdue(){
+        
+        Date now = new Date();
+        
+        if(now.after(duedate){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     public void open (File f) throws FileNotFoundException, IOException{
         lib=f;
