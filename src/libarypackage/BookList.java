@@ -15,7 +15,8 @@ public class BookList extends javax.swing.JPanel {
     /**
      * Creates new form list
      */
-    public BookList() {
+    public BookList(Libary own) {
+        owner=own;
         initComponents();
     }
 
@@ -38,21 +39,12 @@ public class BookList extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         jLayeredPane3 = new javax.swing.JLayeredPane();
         jScrollPane1 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
         jScrollPane2.setViewportView(jTable1);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
@@ -81,6 +73,19 @@ public class BookList extends javax.swing.JPanel {
                 clearcurrent(evt);
             }
         });
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable2);
 
         jButton2.setText("Find");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -124,6 +129,8 @@ public class BookList extends javax.swing.JPanel {
         jLayeredPane2.setLayer(jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jTabbedPane1.addTab("Patron", jLayeredPane2);
+
+        jScrollPane1.setViewportView(jTable3);
 
         javax.swing.GroupLayout jLayeredPane3Layout = new javax.swing.GroupLayout(jLayeredPane3);
         jLayeredPane3.setLayout(jLayeredPane3Layout);
@@ -170,7 +177,7 @@ public class BookList extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_clearcurrent
 
-
+     private Libary owner;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -184,6 +191,8 @@ public class BookList extends javax.swing.JPanel {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

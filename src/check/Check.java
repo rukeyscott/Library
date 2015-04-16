@@ -40,5 +40,9 @@ public class Check {
     public int getpatroncard (){
         return cardholder;
     }
+       public boolean overdue(Date now){
+        return now.after(duedate);        
+        
+    }
     
 }

@@ -15,6 +15,8 @@ import java.util.logging.Logger;
  * @author jenniferschofield
  */
 public class LibaryGUI extends javax.swing.JFrame {
+    private javax.swing.JMenu jMenu1;
+    private check.SetDate setdate;
 
     /**
      * Creates new form LibaryMain
@@ -42,25 +44,13 @@ public class LibaryGUI extends javax.swing.JFrame {
         bookRemove = new book.RemoveBook(owner);
         patronNew3 = new patronpackage.PatronNew(owner);
         patronRemove = new patronpackage.RemovePatron(owner);
-        bookList2 = new BookList();
+        bookList2 = new BookList(owner);
+        setdate =new check.SetDate(owner);
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         open = new javax.swing.JMenuItem();
         date = new javax.swing.JMenuItem();
         quit = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        checkOut = new javax.swing.JMenuItem();
-        checkIn = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        listPatron = new javax.swing.JMenuItem();
-        listOverdue = new javax.swing.JMenuItem();
-        listAll = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        addPatron = new javax.swing.JMenuItem();
-        addBook = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
-        removePatron = new javax.swing.JMenuItem();
-        removeBook = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,58 +116,7 @@ public class LibaryGUI extends javax.swing.JFrame {
             }
         });
         jMenu1.add(open);
-
-        date.setText("Date");
-        jMenu1.add(date);
-
-        quit.setText("Quit");
-        jMenu1.add(quit);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Check");
-
-        checkOut.setText("Out");
-        jMenu2.add(checkOut);
-
-        checkIn.setText("In");
-        jMenu2.add(checkIn);
-
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("List");
-
-        listPatron.setText("Patron");
-        jMenu3.add(listPatron);
-
-        listOverdue.setText("Overdue");
-        jMenu3.add(listOverdue);
-
-        listAll.setText("All");
-        jMenu3.add(listAll);
-
         jMenuBar1.add(jMenu3);
-
-        jMenu4.setText("Add");
-
-        addPatron.setText("Patron");
-        jMenu4.add(addPatron);
-
-        addBook.setText("Book");
-        jMenu4.add(addBook);
-
-        jMenuBar1.add(jMenu4);
-
-        jMenu5.setText("Remove");
-
-        removePatron.setText("Patron");
-        jMenu5.add(removePatron);
-
-        removeBook.setText("Book");
-        jMenu5.add(removeBook);
-
-        jMenuBar1.add(jMenu5);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -254,32 +193,18 @@ public class LibaryGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem addBook;
-    private javax.swing.JMenuItem addPatron;
     private BookList bookList2;
     private book.BookNew bookNew;
     private book.RemoveBook bookRemove;
-    private javax.swing.JMenuItem checkIn;
-    private javax.swing.JMenuItem checkOut;
     private check.CheckOut checkOutWindow;
     private check.Checkin checkInWindow;
     private javax.swing.JMenuItem date;
     private javax.swing.JDesktopPane jDesktopPane;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem listAll;
-    private javax.swing.JMenuItem listOverdue;
-    private javax.swing.JMenuItem listPatron;
     private javax.swing.JMenuItem open;
     private patronpackage.PatronNew patronNew3;
     private patronpackage.RemovePatron patronRemove;
     private javax.swing.JMenuItem quit;
-    private javax.swing.JMenuItem removeBook;
-    private javax.swing.JMenuItem removePatron;
     private Libary owner;
     // End of variables declaration//GEN-END:variables
 }

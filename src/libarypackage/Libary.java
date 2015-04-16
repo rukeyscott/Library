@@ -36,8 +36,7 @@ public class Libary {
         checkeds=new ArrayList<>();
         lastbook=0;
         lastpatron=0;
-        
-        DatesTime duedate = new DateTime(currentdate.getTime());
+        currentdate= new Date (1,1,2015);
         
     }
     public void addbook(Book b){
@@ -57,7 +56,7 @@ public class Libary {
                         if (days>0){
                             b.checkout();
                             p.checkout();
-                            checkeds.add(new Check (card, item, days, currenrdate));
+                            checkeds.add(new Check (card, item, days,currentdate));
                             return 1;
                         }
                         return 0;
@@ -109,17 +108,7 @@ public class Libary {
         
     }
     
-    public boolean overdue(){
-        
-        Date now = new Date();
-        
-        if(now.after(duedate){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
+ 
     public void open (File f) throws FileNotFoundException, IOException{
         lib=f;
         String line;
@@ -171,6 +160,9 @@ public class Libary {
         } catch (IOException ex) {
             Logger.getLogger(Libary.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    public void updateDate(java.util.Date d){
+        currentdate=d;
     }
             
     
