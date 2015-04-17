@@ -1,5 +1,6 @@
 package libarypackage;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -49,7 +50,7 @@ public class LibaryGUI extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         open = new javax.swing.JMenuItem();
-        date = new javax.swing.JMenuItem();
+        save = new javax.swing.JMenuItem();
         quit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -121,7 +122,29 @@ public class LibaryGUI extends javax.swing.JFrame {
                 openActionPerformed(evt);
             }
         });
+        save.setText("Save");
+        save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                try {
+                    owner.save();
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(LibaryGUI.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        quit.setText("Open");
+        quit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+               try {
+                    owner.save();
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(LibaryGUI.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
         jMenu1.add(open);
+        jMenu1.add(save);
+        jMenu1.add(quit);
         jMenuBar1.add(jMenu1);
         setJMenuBar(jMenuBar1);
 
@@ -204,7 +227,7 @@ public class LibaryGUI extends javax.swing.JFrame {
     private book.RemoveBook bookRemove;
     private check.CheckOut checkOutWindow;
     private check.Checkin checkInWindow;
-    private javax.swing.JMenuItem date;
+    private javax.swing.JMenuItem save;
     private javax.swing.JDesktopPane jDesktopPane;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem open;
