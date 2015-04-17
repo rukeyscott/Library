@@ -15,7 +15,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
@@ -28,7 +28,7 @@ public class Libary {
     ArrayList <Check> checkeds;
     int lastbook;
     int lastpatron;
-    Date currentdate;
+    LocalDate currentdate;
     File lib;
     public Libary() {
         books = new ArrayList<>();
@@ -36,7 +36,7 @@ public class Libary {
         checkeds=new ArrayList<>();
         lastbook=0;
         lastpatron=0;
-        currentdate= new Date (1,1,2015);
+        currentdate= LocalDate.of (1,1,2015);
         
     }
     public void addbook(Book b){
@@ -163,7 +163,7 @@ public class Libary {
             Logger.getLogger(Libary.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public void updateDate(java.util.Date d){
+    public void updateDate( LocalDate d){
         currentdate=d;
     }
     public String allbooks(){

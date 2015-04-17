@@ -5,7 +5,7 @@
  */
 package check;
 
-import java.util.Date;
+import java.time.LocalDate;
 import libarypackage.Libary;
 
 /**
@@ -100,9 +100,9 @@ public class SetDate extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-       Date d;
-      //  d = new Date (Integer.parseInt(()year.getSelectedItem()), Integer.parseInt((String) mounth.getSelectedItem()), Integer.parseInt((String)day.getSelectedItem()));
-        //owner.updateDate(d);
+       LocalDate d;
+       d =  LocalDate.of(Integer.parseInt((String)year.getSelectedItem()), Integer.parseInt((String) mounth.getSelectedItem()), Integer.parseInt((String)day.getSelectedItem()));
+        owner.updateDate(d);
         
     }//GEN-LAST:event_okButtonActionPerformed
     private Libary owner;

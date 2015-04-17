@@ -1,8 +1,10 @@
 package check;
 
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.text.DateFormat;
+import java.time.format.DateTimeFormatter;
+import  java.util.concurrent.TimeUnit;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -16,25 +18,25 @@ import java.text.DateFormat;
 public class Check {
     int cardholder;
     int bookid;
-    Date duedate;
+    LocalDate duedate;
 
-    public Check(int cardholder, int bookid,int days, Date duedate) {
+    public Check(int cardholder, int bookid,int days, LocalDate duedate) {
         this.cardholder = cardholder;
         this.bookid = bookid;
-        this.duedate = duedate;
+        this.duedate = duedate.plusDays(days);
     }
     public Check (String s){
         String [] ch= s.split(",=");
         cardholder =Integer.parseInt(ch[1]);
         bookid = Integer.parseInt(ch[2]);
-        
+        duedate= LocalDate.of(Integer.parseInt(ch[3]),Integer.parseInt(ch[4]),Integer.parseInt(ch[5]));
         
     }
 
     @Override
     public String toString() {
         return "C" + ",=" + cardholder + ",=" + bookid + 
-                ",=" + duedate.toString();
+                ",=" + duedate.getYear()+",="+duedate.getMonth()+",=" +duedate.getDayOfMonth();
     }
     public boolean ischeckedout(int item){
         return item==bookid;
@@ -48,8 +50,8 @@ public class Check {
     public int getbookid (){
         return bookid;
     }
-       public boolean overdue(Date now){
-        return now.after(duedate);        
+       public boolean overdue(LocalDate now){
+        return now.isAfter(duedate);
         
     }
     
