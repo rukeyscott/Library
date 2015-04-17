@@ -10,7 +10,7 @@ package libarypackage;
  *
  * @author jenniferschofield
  */
-public class BookList extends javax.swing.JPanel {
+public class BookList extends javax.swing.JPanel {// this is the gui for the bookist
 
     /**
      * Creates new form list
@@ -28,7 +28,7 @@ public class BookList extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+//all of the labels for the form gui
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -44,6 +44,7 @@ public class BookList extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         overduebooks = new javax.swing.JTextArea();
 
+//listner for the button clickse
         jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 overdueclick(evt);
@@ -54,7 +55,7 @@ public class BookList extends javax.swing.JPanel {
                 allbooksshow(evt);
             }
         });
-
+//sets rows and columns for the gui
         allbooks.setColumns(20);
         allbooks.setRows(5);
         jScrollPane1.setViewportView(allbooks);
