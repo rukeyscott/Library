@@ -12,7 +12,7 @@ package book;
  */
 public class Book {
     String title;
-    String athuor;
+    String author;
     String description;
     String type;
     boolean in;
@@ -20,7 +20,7 @@ public class Book {
 
     public Book(String title, String athuor, String description, String type, boolean in) {
         this.title = title;
-        this.athuor = athuor;
+        this.author = athuor;
         this.description = description;
         this.type = type;
         this.in = in;
@@ -30,11 +30,13 @@ public class Book {
 }
    //takes asiingle string and converts it into a book object
     public Book(String book) {
-        title = book;
-        author ="";
-        description = "";
-        type = "";
-        in = false;
+       String[] b= book.split(",=");
+        title = b[1];
+        author =b[2];
+        description = b[3];
+        type = b[4];
+        in = Boolean.getBoolean(b[5]);
+        id= Integer.parseInt(b[6]);
         
     }
 
@@ -64,8 +66,8 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" + "title=" + title + ", athuor=" + athuor + ", description=" + 
-                description + ", type=" + type + ", in=" + in + ", id=" + id + '}';
+        return "B" + ",=" + title + ",=" + author + ",=" + 
+                description + ",=" + type + ",=" + in + ",=" + id;
     }
     public boolean isBook(int b){
         return b==id;

@@ -35,15 +35,17 @@ public class Patron {
     }
     
     public Patron(String person) {
-        name = person;
-        type = "";
-        numberCheckedOut = "";
-        phone = "";
-        addressl1 = "";
-        addressl2 = "";
-        city = "";
-        state = "";
-        zip = "";
+        String [] p=person.split(",=");
+        name = p[1];
+        type = p[2];
+        card=Integer.parseInt(p[3]);
+        numberCheckedOut = Integer.parseInt(p[4]);
+        phone = p[5];
+        addressl1 = p[6];
+        addressl2 = p[7];
+        city = p[8];
+        state = p[9];
+        zip = p[10];
     }
     
     public void addcard(int c){
@@ -51,10 +53,10 @@ public class Patron {
     }
     @Override
     public String toString() {
-        return "Patron{" + "name=" + name + ", type=" + type + ", card=" + card +
-                ", numberCheckedOut=" + numberCheckedOut + ", phone=" + phone + 
-                ", addressl1=" + addressl1 + ", addressl2=" + addressl2 + ", city=" + 
-                city + ", state=" + state + ", zip=" + zip + '}';
+        return "P" + ",=" + name + ",=" + type + ",=" + card +
+                ",=" + numberCheckedOut + ",=" + phone + 
+                ",=" + addressl1 + ",=" + addressl2 + ",=" + 
+                city + ",=" + state + ",=" + zip;
     }
     public String cancheckout(){
         if (numberCheckedOut<items()){

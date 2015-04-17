@@ -41,10 +41,12 @@ public class Libary {
     }
     public void addbook(Book b){
         b.addid(lastbook++);
+        allbooks();
         books.add(b);
     }
     public void addPatron(Patron p){
         p.addcard(lastpatron++);
+        System.out.print(p.toString());
         patrons.add(p);
     }
     public int checkout(int card, int item){
@@ -164,6 +166,43 @@ public class Libary {
     public void updateDate(java.util.Date d){
         currentdate=d;
     }
-            
+    public String allbooks(){
+        String list="";
+        for(Book b : books){
+            list=list+b.toString()+'\n';
+        }
+        System.out.print(list);
+        return list;
+    }
+    public String patronbooks(int card){
+        String list="";
+        for (Check c: checkeds){
+            if (c.ispatron(card)){
+                int bid=c.getbookid();
+                for (Book b: books){
+                    if (b.isBook(bid)){            
+                       list=list+b.toString()+'\n';
+                    }
+                }
+            }
+        }
+        System.out.print(list);
+        return list;
+    }
+        public String overduebooks(){
+        String list="";
+        for (Check c: checkeds){
+            if (c.overdue(currentdate)){
+                int bid=c.getbookid();
+                for (Book b: books){
+                    if (b.isBook(bid)){            
+                       list=list+b.toString()+'\n';
+                    }
+                }
+            }
+        }
+        System.out.print(list);
+        return list;
+    }
     
 }

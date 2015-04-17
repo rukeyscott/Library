@@ -51,6 +51,7 @@ public class PatronNew extends javax.swing.JInternalFrame {
         jButton2 = new javax.swing.JButton();
         state = new javax.swing.JComboBox();
 
+        setClosable(true);
         setTitle("New Patron");
 
         jLabel1.setText("Name");
