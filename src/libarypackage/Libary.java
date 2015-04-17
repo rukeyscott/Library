@@ -36,7 +36,8 @@ public class Libary {
         checkeds=new ArrayList<>();
         lastbook=0;
         lastpatron=0;
-        currentdate= LocalDate.of (1,1,2015);
+        currentdate= LocalDate.of (2015,1,1);
+        
         
     }
     public void addbook(Book b){
