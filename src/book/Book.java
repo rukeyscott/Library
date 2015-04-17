@@ -10,6 +10,14 @@ package book;
  *
  * @author jenniferschofield
  */
+ 
+ 
+// Book class contains all infomation of single book 
+
+// Book default constructor
+// Purpose: Initialize variables to default values
+// Parameters: none
+// Returns: none
 public class Book {
     String title;
     String author;
@@ -18,6 +26,10 @@ public class Book {
     boolean in;
     int id;
 
+// Book parameterized constructor
+// Purpose: Initialize variables to parameters passed to the function
+// Parameters: the name of the object and its coordinates
+// Returns: none
     public Book(String title, String athuor, String description, String type, boolean in) {
         this.title = title;
         this.author = athuor;
@@ -25,10 +37,19 @@ public class Book {
         this.type = type;
         this.in = in;
     }
+    
+// addid
+// Purpose: To add book id
+// Parameters: int i
+// Returns: none
    public void addid (int i){
         id=i;
 }
-   //takes asiingle string and converts it into a book object
+
+// Book
+// Purpose: takes a single string and converts it into a book object
+// Parameters: string, book
+// return: none
     public Book(String book) {
        String[] b= book.split(",=");
         title = b[1];
@@ -40,12 +61,21 @@ public class Book {
         
     }
 
-
+// cancheckout
+// Purpose: To check if patron can checkout book
+// Parameters: string patron
+// Return: none
     public int cancheckout(String patron){
        if( (patron==type || patron=="Adult")&&in){
            return dayscheckout();
        }else return 0;
     }
+    
+// dayscheckout
+// Purpose: To get length of day checkout days each patron
+// Parameters: none
+// Return: int, length of day
+
     public int dayscheckout(){
         if (type=="Adult"){
             return 14;
@@ -57,9 +87,20 @@ public class Book {
             return 3;
         }
     }
+    
+    // checkout
+    // Purpose: to check the book is checkout
+    // Parameters: none
+    // Return: none
+    
     public void checkout(){
         in=false;
     }
+    
+    // checkin
+    // Purpose: to check the book is checkin
+    // Parameters: none
+    // Return: none
     public void checkin(){
         in=true;
     }
@@ -69,6 +110,11 @@ public class Book {
         return "B" + ",=" + title + ",=" + author + ",=" + 
                 description + ",=" + type + ",=" + in + ",=" + id;
     }
+    
+    // isBook
+    // Purpose: check the book if it's in database with specific id
+    // Parameters: int b
+    // Return: boolean
     public boolean isBook(int b){
         return b==id;
     }
