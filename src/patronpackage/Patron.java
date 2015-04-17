@@ -10,6 +10,8 @@ package patronpackage;
  *
  * @author jenniferschofield
  */
+ 
+ //We have a patron class with all o f the patrons that are avaiable
 public class Patron {
     String name;
     String type;
@@ -22,6 +24,7 @@ public class Patron {
     String state;
     String zip;
 
+//patron includes a name,number odfbooks chaecked,adress,zip,state, and phone
     public Patron(String name, String type, int numberCheckedOut, String phone, String addressl1, String addressl2, String city, String state, String zip) {
         this.name = name;
         this.type = type;
@@ -48,37 +51,37 @@ public class Patron {
         zip = p[10];
     }
     
-    public void addcard(int c){
+    public void addcard(int c){//adding a card id
         card=c;
     }
     @Override
-    public String toString() {
+    public String toString() {//putting the patron into a string
         return "P" + ",=" + name + ",=" + type + ",=" + card +
                 ",=" + numberCheckedOut + ",=" + phone + 
                 ",=" + addressl1 + ",=" + addressl2 + ",=" + 
                 city + ",=" + state + ",=" + zip;
     }
-    public String cancheckout(){
+    public String cancheckout(){//check to see how many books can be checked out
         if (numberCheckedOut<items()){
             return type;
         }else {
             return "";
         }
     }
-    public void checkout(){
+    public void checkout(){//increments how many book are checked out
         numberCheckedOut++;
     }
-    public void checkIn(){
+    public void checkIn(){//decrements how many book are checked out
         numberCheckedOut--;
     }
 
     
-    public int items (){
+    public int items (){//total items that can be checked out
         if (type=="Child"){
             return 3;
         }else return 6;
     }
-    public boolean ispatron (int c){
+    public boolean ispatron (int c){//is the person a patron
         return c==card;
     }
 }
