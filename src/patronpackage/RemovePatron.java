@@ -11,6 +11,8 @@ import libarypackage.Libary;
  *
  * @author jenniferschofield
  */
+ 
+ // this class is to remove a patron from the database(txt file)
 public class RemovePatron extends javax.swing.JInternalFrame {
 
     /**
@@ -37,16 +39,16 @@ public class RemovePatron extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         card = new javax.swing.JTextField();
 
-        setTitle("Remove Patron");
+        setTitle("Remove Patron");// gui title
 
-        okButton.setText("Check in");
+        okButton.setText("Check in");//check in gui
         okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 okButtonActionPerformed(evt);
             }
         });
 
-        cancelButton.setText("Clear");
+        cancelButton.setText("Clear");//clear button gui
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
@@ -55,7 +57,7 @@ public class RemovePatron extends javax.swing.JInternalFrame {
 
         jPanel1.setLayout(new java.awt.GridLayout(1, 2));
 
-        jLabel2.setText("Card Number");
+        jLabel2.setText("Card Number");//shows the card number in the gui
         jPanel1.add(jLabel2);
         jPanel1.add(card);
 
