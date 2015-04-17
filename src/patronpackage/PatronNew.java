@@ -2,17 +2,12 @@ package patronpackage;
 
 import libarypackage.Libary;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
  * @author jenniferschofield
  */
-public class PatronNew extends javax.swing.JInternalFrame {
+public class PatronNew extends javax.swing.JInternalFrame {//this code controls the gui for adding a new patron
 
     /**
      * Creates new form PatronNew
@@ -53,7 +48,7 @@ public class PatronNew extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("New Patron");
-
+//this is all of the labels for the gui form fields
         jLabel1.setText("Name");
 
         jLabel2.setText("Phone");

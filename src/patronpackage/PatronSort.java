@@ -3,23 +3,19 @@ package patronpackage;
 
 import java.util.Comparator;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 /**
  *
  * @author jenniferschofield
  */
-public class PatronSort implements Comparator<Patron>{
+public class PatronSort implements Comparator<Patron>{//this class compares patrons to eachother then sorts and returns
      @Override
     public int compare(Patron o1, Patron o2) {
-        if (o1.card<o2.card){
+        if (o1.card<o2.card){//if card id is lower then return -1
             return -1;
         }
-            else if (o1.card==o2.card){
+            else if (o1.card==o2.card){//if card id is the same return o(nothing)
                 return 0;
             }else return 1;
         
