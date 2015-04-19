@@ -66,7 +66,7 @@ public class Book {
 // Parameters: string patron
 // Return: none
     public int cancheckout(String patron){
-       if( (patron==type || patron=="Adult")&&in){
+       if( (type.startsWith(patron) || patron=="Adult")&&in){
            return dayscheckout();
        }else return 0;
     }
@@ -103,6 +103,11 @@ public class Book {
     // Return: none
     public void checkin(){
         in=true;
+    }
+    
+    public String tolist() {
+        return id + "   "  + title + "   " + author + "   " + 
+                description + "   " + type + "   " + in ;
     }
 
     @Override

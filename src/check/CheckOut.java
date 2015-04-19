@@ -164,6 +164,6 @@ public class CheckOut extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
-    private Libary owner;
+    private final Libary owner;
     private int returnStatus = RET_CANCEL;
 }

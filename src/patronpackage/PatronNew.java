@@ -158,12 +158,15 @@ public class PatronNew extends javax.swing.JInternalFrame {//this code controls 
     }// </editor-fold>//GEN-END:initComponents
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
+   
         Patron p= new Patron(name.getText(), (String)type.getSelectedItem(),0,
                             phone.getText(), adl1.getText(), adl2.getText(),
                             city.getText(), (String) state.getSelectedItem(),
                             zip.getText());
+       
         owner.addPatron(p);
         clear(evt);
+         
     }//GEN-LAST:event_addActionPerformed
 
     private void clear(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear
@@ -200,6 +203,6 @@ public class PatronNew extends javax.swing.JInternalFrame {//this code controls 
     private javax.swing.JComboBox type;
     private javax.swing.JTextField zip;
     // End of variables declaration//GEN-END:variables
-    private Libary owner;
-
+    private final Libary owner;
+   
 }

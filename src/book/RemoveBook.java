@@ -108,5 +108,5 @@ public class RemoveBook extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton okButton;
     // End of variables declaration//GEN-END:variables
-    private Libary owner;
+    private final Libary owner;
 }

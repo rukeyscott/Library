@@ -39,16 +39,17 @@ public class RemovePatron extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         card = new javax.swing.JTextField();
 
-        setTitle("Remove Patron");// gui title
+        setTitle("Remove Patron");
 
-        okButton.setText("Check in");//check in gui
+        okButton.setText("Remove");
+        okButton.setToolTipText("");
         okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 okButtonActionPerformed(evt);
             }
         });
 
-        cancelButton.setText("Clear");//clear button gui
+        cancelButton.setText("Clear");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
@@ -57,7 +58,7 @@ public class RemovePatron extends javax.swing.JInternalFrame {
 
         jPanel1.setLayout(new java.awt.GridLayout(1, 2));
 
-        jLabel2.setText("Card Number");//shows the card number in the gui
+        jLabel2.setText("Card Number");
         jPanel1.add(jLabel2);
         jPanel1.add(card);
 
@@ -107,5 +108,5 @@ public class RemovePatron extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton okButton;
     // End of variables declaration//GEN-END:variables
-    private Libary owner;
+    private final Libary owner;
 }

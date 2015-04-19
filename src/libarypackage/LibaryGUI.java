@@ -122,24 +122,16 @@ public class LibaryGUI extends javax.swing.JFrame {
                 openActionPerformed(evt);
             }
         });
-        save.setText("Save");
+        save.setText("Save As ");
         save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                try {
-                    owner.save();
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(LibaryGUI.class.getName()).log(Level.SEVERE, null, ex);
-                }
+               
             }
         });
-        quit.setText("Open");
+        quit.setText("Quit");
         quit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-               try {
-                    owner.save();
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(LibaryGUI.class.getName()).log(Level.SEVERE, null, ex);
-                }
+               quit();
             }
         });
         jMenu1.add(open);
@@ -185,7 +177,29 @@ public class LibaryGUI extends javax.swing.JFrame {
         }
             
     }//GEN-LAST:event_openActionPerformed
-
+    private void saveas (){
+        try {
+            javax.swing.JFileChooser open
+                    = new javax.swing.JFileChooser();
+            if (open.showOpenDialog(this)
+                    == javax.swing.JFileChooser.APPROVE_OPTION) {
+                java.io.File file = open.getSelectedFile();
+                owner.open(file);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(LibaryGUI.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(LibaryGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    private void quit(){
+        try {
+                    owner.save();
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(LibaryGUI.class.getName()).log(Level.SEVERE, null, ex);
+                }
+               this.dispose();
+    }
     /**
      * @param args the command line arguments
      */
@@ -234,6 +248,6 @@ public class LibaryGUI extends javax.swing.JFrame {
     private patronpackage.PatronNew patronNew3;
     private patronpackage.RemovePatron patronRemove;
     private javax.swing.JMenuItem quit;
-    private Libary owner;
+    private final Libary owner;
     // End of variables declaration//GEN-END:variables
 }

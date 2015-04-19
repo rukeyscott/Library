@@ -32,11 +32,14 @@ public class Check {
         duedate= LocalDate.of(Integer.parseInt(ch[3]),Integer.parseInt(ch[4]),Integer.parseInt(ch[5]));
         
     }
-
+ public String toSList() {
+        return  cardholder + "   " + bookid + 
+                "   " + duedate.getYear()+"   "+duedate.getMonth()+"   " +duedate.getDayOfMonth();
+    }
     @Override
     public String toString() {
         return "C" + ",=" + cardholder + ",=" + bookid + 
-                ",=" + duedate.getYear()+",="+duedate.getMonth()+",=" +duedate.getDayOfMonth();
+                ",=" + duedate.getYear()+",="+duedate.getMonthValue()+",=" +duedate.getDayOfMonth();
     }
     public boolean ischeckedout(int item){
         return item==bookid;

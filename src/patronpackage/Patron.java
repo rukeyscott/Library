@@ -11,7 +11,7 @@ package patronpackage;
  * @author jenniferschofield
  */
  
- //We have a patron class with all o f the patrons that are avaiable
+ //We have a patron class with all of the atrobutes that are avaiable
 public class Patron {
     String name;
     String type;
@@ -25,7 +25,8 @@ public class Patron {
     String zip;
 
 //patron includes a name,number odfbooks chaecked,adress,zip,state, and phone
-    public Patron(String name, String type, int numberCheckedOut, String phone, String addressl1, String addressl2, String city, String state, String zip) {
+    public Patron(String name, String type, int numberCheckedOut, String phone, String addressl1, 
+            String addressl2, String city, String state, String zip) {
         this.name = name;
         this.type = type;
         this.numberCheckedOut = numberCheckedOut;
@@ -81,7 +82,7 @@ public class Patron {
             return 3;
         }else return 6;
     }
-    public boolean ispatron (int c){//is the person a patron
+    public boolean ispatron (int c){//is the person with card #c this patron
         return c==card;
     }
 }

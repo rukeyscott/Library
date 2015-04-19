@@ -44,9 +44,6 @@ public class BookNew extends javax.swing.JInternalFrame {
         add = new javax.swing.JButton();
         clear = new javax.swing.JButton();
 
-        setIconifiable(true);
-        setMaximizable(true);
-        setResizable(true);
         setTitle("New Book");
 
         jLabel1.setText("Title");
@@ -160,5 +157,5 @@ public class BookNew extends javax.swing.JInternalFrame {
     private javax.swing.JTextField title;
     private javax.swing.JComboBox type;
     // End of variables declaration//GEN-END:variables
-    private Libary owner;
+    private final Libary owner;
 }

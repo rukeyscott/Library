@@ -9,10 +9,8 @@ package libarypackage;
 import patronpackage.Patron;
 import check.Check;
 import book.Book;
-import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.time.LocalDate;
@@ -47,7 +45,6 @@ public class Libary {
     }
     public void addPatron(Patron p){
         p.addcard(lastpatron++);
-        System.out.print(p.toString());
         patrons.add(p);
     }
     public int checkout(int card, int item){
@@ -138,6 +135,10 @@ public class Libary {
             Logger.getLogger("global").log(Level.SEVERE, null, ex);
         }
     }
+    public void saveas(File f) throws FileNotFoundException{
+        lib=f;
+        save ();
+    }
     public void save() throws FileNotFoundException{
         try {
             java.io.BufferedWriter outputstream;
@@ -170,9 +171,22 @@ public class Libary {
     public String allbooks(){
         String list="";
         for(Book b : books){
+            list=list+b.tolist()+'\n';
+        }
+        return list;
+    }
+    public String allpatron(){
+        String list="";
+        for(Patron b : patrons){
             list=list+b.toString()+'\n';
         }
-        System.out.print(list);
+        return list;
+    }
+    public String allcheckout(){
+        String list="";
+        for(Check b : checkeds){
+            list=list+b.toSList()+'\n';
+        }
         return list;
     }
     public String patronbooks(int card){
@@ -182,12 +196,11 @@ public class Libary {
                 int bid=c.getbookid();
                 for (Book b: books){
                     if (b.isBook(bid)){            
-                       list=list+b.toString()+'\n';
+                       list=list+b.tolist()+'\n';
                     }
                 }
             }
         }
-        System.out.print(list);
         return list;
     }
         public String overduebooks(){
@@ -197,12 +210,11 @@ public class Libary {
                 int bid=c.getbookid();
                 for (Book b: books){
                     if (b.isBook(bid)){            
-                       list=list+b.toString()+'\n';
+                       list=list+b.tolist()+'\n';
                     }
                 }
             }
         }
-        System.out.print(list);
         return list;
     }
     
