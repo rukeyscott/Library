@@ -93,7 +93,10 @@ public class RemovePatron extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        owner.removepatron(Integer.parseInt(card.getText()));
+        if(!"".equals(card.getText()))
+            owner.removepatron(Integer.parseInt(card.getText()));
+        else
+           System.out.println("Empty field");
     }//GEN-LAST:event_okButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
