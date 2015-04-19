@@ -129,7 +129,10 @@ public class CheckOut extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutButtonActionPerformed
-        owner.checkout(Integer.parseInt(card.getText()), Integer.parseInt(item.getText()));
+       if(!"".equals(card.getText()) || !"".equals(item.getText()))
+         owner.checkout(Integer.parseInt(card.getText()), Integer.parseInt(item.getText()));
+        else
+           System.out.println("Empty field");
         clear(evt);
     }//GEN-LAST:event_checkOutButtonActionPerformed
 
