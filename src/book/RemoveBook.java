@@ -92,7 +92,10 @@ public class RemoveBook extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
+         if(!"".equals(item.getText()))
         owner.removebook(Integer.parseInt(item.getText()));
+       else
+           System.out.println("Empty field");
         clear(evt);
     }//GEN-LAST:event_okButtonActionPerformed
 
