@@ -101,7 +101,10 @@ public class Checkin extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        owner.checkin(Integer.parseInt(item.getText()));
+        if(!"".equals(item.getText()))
+            owner.checkin(Integer.parseInt(item.getText()));
+        else
+           System.out.println("Empty field");
         clear(evt);
     }//GEN-LAST:event_okButtonActionPerformed
 
